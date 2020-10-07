@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link ref="style" href="scc/style.css">
+</head>
+<body>
+<div class="dropdown">
+    <button onclick="Country()" class="dropbtn">Country</button>
+    <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="#Estonia">Estonia</a>
+        <a href="#Latvia">Latvia</a>
+        <a href="#Lithuania">Lithuania</a>
+    </div>
+</div>
+<script>
+    function Country() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+    function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+        } else {
+        a[i].style.display = "none";
+        }
+    }
+}
+</script>
+</body>
+</html>
